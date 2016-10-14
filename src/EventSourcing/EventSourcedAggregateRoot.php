@@ -41,6 +41,7 @@ abstract class EventSourcedAggregateRoot implements AggregateRoot
     public function replay(DomainEventStream $stream)
     {
         foreach ($stream as $event) {
+            $this->playhead++;
             $this->handleRecursively($event->getPayload());
         }
 
