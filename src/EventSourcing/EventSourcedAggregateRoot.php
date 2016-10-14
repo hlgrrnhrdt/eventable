@@ -75,19 +75,19 @@ abstract class EventSourcedAggregateRoot implements AggregateRoot
     }
 
     /**
-     * @param $event
-     */
-    protected function handleRecursively($event)
-    {
-        $this->handle($event);
-    }
-
-    /**
      * @return DomainEventStream|DomainMessage[]
      */
     public function getUncommittedEvents() : DomainEventStream
     {
         return new DomainEventStream($this->uncommittedEvents);
+    }
+
+    /**
+     * @param $event
+     */
+    protected function handleRecursively($event)
+    {
+        $this->handle($event);
     }
 
     private function getApplyMethod($event)

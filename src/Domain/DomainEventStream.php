@@ -3,7 +3,6 @@ namespace Hlgrrnhrdt\Eventable\Domain;
 
 use ArrayIterator;
 use IteratorAggregate;
-use Traversable;
 
 /**
  * DomainEventStream

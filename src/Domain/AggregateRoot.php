@@ -11,7 +11,7 @@ interface AggregateRoot
     /**
      * @return DomainEventStream|DomainMessage[]
      */
-    public function getUncommittedEvents();
+    public function getUncommittedEvents() : DomainEventStream;
 
     /**
      * @return string
